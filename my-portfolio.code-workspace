@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "node200-ejs-portfolio",
+			"path": "."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}

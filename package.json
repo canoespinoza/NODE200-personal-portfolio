@@ -1,0 +1,31 @@
+{
+  "name": "node200-ejs-portfolio",
+  "version": "1.0.0",
+  "description": "my personal portfolio",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/canoespinoza/Portfolio.git"
+  },
+  "author": "Cano Espinoza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/canoespinoza/Portfolio/issues"
+  },
+  "homepage": "https://github.com/canoespinoza/Portfolio#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-router": "0.0.1",
+    "jQuery": "^1.7.4",
+    "jquery": "^3.4.1",
+    "morgan": "^1.9.1",
+    "startbootstrap-creative": "^5.1.8"
+  }
+}

@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Contact Cano</title>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' />
+  </head>
+  <body>
+    <div style="background-image: url(https://images.pexels.com/photos/572487/pexels-photo-572487.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=550&w=1300); height: 100%">
+      <form class="container bg-light" name='submit-to-google-sheets' action="/thanks" method="POST">
+        <h2 class="text-center">Contact Me!</h2>
+        <br>
+        <label for="firstName">First Name:</label>
+        <input id="firstName" name="firstName" type="text" style="margin: 25px">
+
+        <label for="lastName">Last Name:</label>
+        <input id="lastName" name="lastName" type="text" style="margin: 25px">
+
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="text" style="margin: 25px">
+        <div class="text-center">
+        <input type="submit" style="margin: 25px" class="btn btn-primary"/>
+        </div>
+      </form>
+    </div>
+    <!-- scripts for older browsers -->
+    <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+    <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+    <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+    <!-- main google sheets script -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzuwcNjdYGDVXs6KwULfcDBABunMnQw8qGYIVaYGuFX29FEdJPw/exec'
+        const form = document.forms['submit-to-google-sheets']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => window.location.replace('/thanks'))
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+  </body>
+</html>
